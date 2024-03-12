@@ -27,20 +27,6 @@ export default function Footer() {
                                 Todo
                             </Link>
                         </li>
-                        {/* <li>
-								<Link
-									to="/note"
-									className="mr-4 hover:underline md:mr-6">
-									Note
-								</Link>
-							</li>
-							<li>
-								<Link
-									to="/expense-tracker"
-									className="hover:underline">
-									Expense Tracker
-								</Link>
-							</li> */}
                     </ul>
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
@@ -49,7 +35,7 @@ export default function Footer() {
                     <a
                         href="https://github.com/heavenlycreature"
                         className="hover:underline" target="_blank" rel="noreferrer">
-                        Olifian Lepin
+                         Olifian Lepin
                     </a>
                     . All Rights Reserved.
                 </span>

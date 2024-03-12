@@ -1,6 +1,8 @@
+import Footer from '../components/Footer';
 import logo from '../logo.svg'
 function Home() {
     return (
+        <>
         <main className="w-full">
             <div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-2 md:px-4 min-h-screen mt-14 mt-sm-0 ">
                 <div className="flex justify-center items-center md:order-2">
@@ -20,9 +22,10 @@ function Home() {
                         This project was created bcs this is my first time using react, <q>Practice make it perfect</q> they said. For me practice make it better, There's a few tool that u can try in this Web, Hope u enjoy it!. please let me know <span className='px-2 py-1 bg-red-600 rounded-md text-white'>ASAP</span> if u found bugs or some kind like that
                     </p>
                 </div>
-            </div>
-            
+            </div>    
         </main>
+        <Footer/>
+        </>
     )
 }
 export default Home;

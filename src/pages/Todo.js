@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 function Todo() {
     const [activity, setActivity] = React.useState('');
@@ -57,8 +58,9 @@ function Todo() {
         console.log(doneTodos)
     }
     return (
+        <>
         <main>
-        <div className="artboard phone-5 my-16 bg-menu bg-blue-400 mx-auto rounded-lg">
+        <div className="artboard phone-5 bg-menu bg-blue-400 mx-auto rounded-lg">
             <h1 className="py-5 text-2xl font-thin italic">What i'm gonna do is...</h1>
             <form onSubmit={addTodoHandler}>
                 <input type="text" className="px-5 py-3 max-w-xl rounded-md" placeholder="fill me" value={activity} onChange={(e) => setActivity(e.target.value)} />
@@ -90,6 +92,8 @@ function Todo() {
             }
         </div>
         </main>
+        <Footer/>
+        </>
     )
 }
 export default Todo;

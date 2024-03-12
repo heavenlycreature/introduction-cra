@@ -1,7 +1,9 @@
+import Footer from '../components/Footer'
 import logo from '../logo.svg'
 
 export default function About() {
     return (
+        <>
         <main>
             <div className="container p-10 mx-auto min-h-screen flex flex-col justify-center items-center">
                 <div className="grid grid-cols-1 ">
@@ -38,5 +40,7 @@ export default function About() {
                 </div>
             </div>
         </main>
+        <Footer/>
+        </>
     )
 };
