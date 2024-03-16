@@ -60,24 +60,34 @@ function Todo() {
     return (
         <>
         <main>
-        <div className="artboard phone-5 bg-menu bg-blue-400 mx-auto rounded-lg">
-            <h1 className="py-5 text-2xl font-thin italic">What i'm gonna do is...</h1>
-            <form onSubmit={addTodoHandler}>
-                <input type="text" className="px-5 py-3 max-w-xl rounded-md" placeholder="fill me" value={activity} onChange={(e) => setActivity(e.target.value)} />
-                <button type="submit" className="mx-3 px-3 py-2 text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" >{edit.id ? 'Simpan' : 'Tambah'}</button>
-                {edit.id && <button className=" px-3 py-2 text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" onClick={cancelEditHandler}>batalkan</button>}
-            </form>
+        <div className="game flex flex-col lg:flex-row w-full">
+            <div className="game-board flex-grow card rounded-box place-items-center">
+            <div className="card card-compact lg:card-normal w-96 bg-primary text-primary-content">
+                <div className="card-body">
+                    <h2 className="card-title">Mau ngapain yaah? hari ini...</h2>
+                        <form onSubmit={addTodoHandler}>
+                            <input type="text" className="px-5 py-3 mb-3 w-full rounded-md" placeholder="fill me" value={activity} onChange={(e) => setActivity(e.target.value)} />
+                    <div className="card-actions justify-end">
+                            <button type="submit" className="mx-3 btn-sm lg:btn-md text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" >{edit.id ? 'Simpan' : 'Tambah'}</button>
+                            {edit.id && <button className=" btn-sm lg:btn-md text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" onClick={cancelEditHandler}>batalkan</button>}
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div className="divider lg:divider-horizontal"></div>
+            <div className="game-info grid flex-grow card rounded-box place-items-center">
             {todo.length > 0 ? (<ul>
                 {
                     todo.map((item) => {
                         return (
-                            <ul className="menu bg-gray-800 hover:bg-none px-3 bg-list my-5 rounded-box">
+                            <ul className="menu menu-md lg:menu-lg bg-gray-800 hover:bg-none px-3 bg-list my-5 rounded-box">
                             <li className="my-2" key={item.id}>
                                 <div className="flex justify-between ">
                                 {item.activity} 
                                 <div>
                                 <input type="checkbox" checked={item.done} className="checkbox" onChange={doneTodo.bind(this, item)}/>
-                                <span className="badge badge-primary ">({item.done ? 'Done' : 'Not yet'})</span>
+                                <span className="badge badge-primary ">({item.done ? 'dah' : 'beyum'})</span>
                                 <button className="mx-3 px-3 py-2 text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" onClick={editTodo.bind(this, item)}>edit</button>
                                 <button className=" px-3 py-2 text-white rounded-lg bg-blue-600 shadow-lg active:bg-slate-100 active:shadow-none active:text-slate-800" onClick={removeTodo.bind(this, item.id)}>hapus</button>
                                 </div>
@@ -90,6 +100,7 @@ function Todo() {
             </ul>) :
                 <p className="text-2xl italic font-light my-14">Masukkan kegiatan</p>
             }
+            </div>
         </div>
         </main>
         <Footer/>

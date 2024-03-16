@@ -24,9 +24,9 @@ function Board({xIsNext, squares, onPlay }){
 
     return (
         <>
-        <div className="artboard artboard-horizontal phone-3 bg-white mx-auto  rounded-sm">
-            <p className="text-lg text-slate-500">{status}</p>
-            <div className=" w-40 flex mt-14 mx-auto align-middle gap-1 border-red-600 flex-wrap">
+        <div className="w-{320} h-{568} w-full  bg-lime-200 mx-auto rounded-sm">
+            <p className="text-center text-lg text-slate-500">{status}</p>
+            <div className=" w-40 flex my-5 mx-auto align-middle gap-1 border-red-600 flex-wrap">
                 <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                 <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
                 <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -77,11 +77,11 @@ export default function Games(){
 
     return(
         <>
-        <div className="game flex w-full">
+        <div className="game flex flex-col lg:flex-row w-full">
             <div className="game-board grid flex-grow card  rounded-box place-items-center">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
             </div>
-            <div className="divider divider-horizontal"></div>
+            <div className="divider lg:divider-horizontal"></div>
             <div className="game-info grid flex-grow card rounded-box place-items-center">
                 <ol>
                     {moves}

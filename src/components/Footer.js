@@ -27,6 +27,13 @@ export default function Footer() {
                                 Todo
                             </Link>
                         </li>
+                        <li>
+                            <Link
+                                to="/games"
+                                className="mr-4 hover:underline md:mr-6">
+                                Games
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
